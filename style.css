@@ -1,0 +1,422 @@
+.mainContainer{
+    display: flex;
+    position:relative;
+    margin: 5% auto;
+    width: 800px;
+    height: 500px;
+    /* background-color: red; */
+    background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgb(241, 117, 0) 80%);
+}
+.bottomBar{
+    align-self: flex-end;
+    /* background-color: green; */
+    width: 100%;
+    height: auto;
+}
+.panel{
+    position: absolute;
+    width: 100%;
+    /* height: 300px; */
+    /* padding-top: 7.71916214%; */
+    /* background-image: url(./src/images/panel_bg_copy_2.png); */
+    background-image: url(./src/images/UI.png);
+    padding-top: 13.6539953%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: yellow; */
+    z-index: 1;
+}
+.btn_info{
+    position: absolute;
+    background-image: url(./src/images/btn_info/btn_info_normal.png);
+    background-size: 100% 100%;
+    width: 35px;
+    height: 35px;
+    left: 40px;
+    bottom: -71px;
+    z-index: 2;
+    cursor: pointer;
+}
+.btn_info:hover{
+    background-image: url(./src/images/btn_info/btn_info_hover.png);
+}
+.btn_info:active{
+    background-image: url(./src/images/btn_info/btn_info_click.png);
+}
+.btn_minus{
+    position: absolute;
+    background: url(./src/images/btn_minus/btn_minus_normal.png);
+    background-size: 100% 100%;
+    width: 27px;
+    height: 27px;
+    left: 83px;
+    bottom: -67px;
+    z-index: 2;
+    cursor: pointer;
+}
+.btn_minus:hover{
+    background-image: url(./src/images/btn_minus/btn_minus_hover.png);
+}
+.btn_minus:active{
+    background-image: url(./src/images/btn_minus/btn_minus_click.png);
+}
+.btn_plus{
+    position: absolute;
+    background: url(./src/images/btn_plus/btn_plus_normal.png);
+    background-size: 100% 100%;
+    width: 27px;
+    height: 27px;
+    left: 172px;
+    bottom: -67px;
+    z-index: 2;
+    cursor: pointer;
+}
+.btn_plus:hover{
+    background-image: url(./src/images/btn_plus/btn_plus_hover.png);
+}
+.btn_plus:active{
+    background-image: url(./src/images/btn_plus/btn_plus_click.png);
+}
+@font-face{
+    font-family: NotoSansCJKsc-Black; 
+    src: url(./src/fonts/NotoSansCJKsc-Black.otf);
+}
+.totalbet{
+    position: absolute;
+    /* background-color: green; */
+    width: 60px;
+    height: 28px;
+    left: 111px;
+    bottom: -67px;
+    z-index: 2;
+}
+.totalbetText{
+    /* background-color: red; */
+    text-align: center;
+    color: #ff6972;
+    text-shadow: 0px 1px 0px #710008;
+    margin: 1px 0px 1px 0px;
+    font-size: 8px;
+	font-family: "NotoSansCJKsc-Black"
+}
+.totalbetCounter{
+    /* background-color: pink; */
+    position: relative;
+    bottom: 4px;
+    text-align: center;
+    color: #ffd100;
+    text-shadow: 0px 1px 0px #710008;
+    margin: 0px;
+    font-size: 12px;
+	font-family: "NotoSansCJKsc-Black";
+}
+.coinbox{
+    position: absolute;
+    /* background-color: green; */
+    width: 58px;
+    height: 28px;
+    left: 208px;
+    bottom: -67px;
+    z-index: 2;
+}
+.coinboxText{
+    /* background-color: red; */
+    text-align: center;
+    color: #ff6972;
+    text-shadow: 0px 1px 0px #710008;
+    margin: 1px 0px 1px 0px;
+    font-size: 8px;
+	font-family: "NotoSansCJKsc-Black"
+}
+.coinboxCounter{
+    /* background-color: pink; */
+    position: relative;
+    bottom: 4px;
+    text-align: center;
+    color: #ffd100;
+    text-shadow: 0px 1px 0px #710008;
+    margin: 0px;
+    font-size: 12px;
+	font-family: "NotoSansCJKsc-Black";
+}
+.win{
+    position: absolute;
+    /* background-color: green; */
+    width: 214px;
+    height: 42px;
+    left: 294px;
+    bottom: -72px;
+    z-index: 2;
+}
+.winText{
+    /* background-color: red; */
+    text-align: center;
+    color: gold;
+    text-shadow: 0px 2px 0px #710008;
+    margin: -4px 0px 1px 0px;
+    font-size: 33px;
+    font-family: "NotoSansCJKsc-Black";
+}
+.checkbox{
+    position: absolute;
+    /* background-color: green; */
+    width: 52px;
+    height: 33px;
+    right: 216px;
+    bottom: -70px;
+    z-index: 2;
+}
+#checkbox{
+    width: 52px;
+    height: 33px;
+    display: block;
+    position: relative;
+    /* background-color: red; */
+}
+#checkboxLabel + span{
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./src/images/turbo_box/turbo_box.png) no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+}
+#checkboxLabel:checked + span{
+    background-position: 0 -33px; 
+}
+
+#checkboxLabel + span:hover{
+    background: url(./src/images/turbo_box/turbo_box_hover.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+}
+#checkboxLabel:checked + span:hover{
+    background: url(./src/images/turbo_box/turbo_box_hover.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: 0 -33px; 
+}
+#checkboxLabel + span:active{
+    background: url(./src/images/turbo_box/turbo_box_click.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+}
+#checkboxLabel:checked + span:active{
+    background: url(./src/images/turbo_box/turbo_box_click.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: 0 -33px; 
+}
+.auto_box{
+    position: absolute;
+    background: url(./src/images/auto_box/auto_box.png) no-repeat;
+    background-size: 100% 100%;
+    /* background-color: green; */
+    width: 124px;
+    height: 33px;
+    right: 88px;
+    bottom: -70px;
+    z-index: 2;
+    cursor: pointer;
+}
+.auto_box:hover{
+    background-image: url(./src/images/auto_box/auto_box_hover.png);
+}
+.auto_box:active{
+    background-image: url(./src/images/auto_box/auto_box_click.png);
+}
+.btn_spin{
+    position: absolute;
+    background-image: url(./src/images/btn_spin/btn_spin.png);
+    background-size: 100% 100%;
+    width: 109px;
+    height: 109px;
+    right: 38px;
+    z-index: 3;
+    cursor: pointer;
+}
+.btn_spin:hover{
+    background-image: url(./src/images/btn_spin/btn_spin_hover.png);
+}
+.btn_spin:active{
+    background-image: url(./src/images/btn_spin/btn_spin_click.png);
+}
+.spinner{
+    position: absolute;
+    /* background-color: green; */
+    background: url(./src/images/spinner/normal.png) no-repeat;
+    background-size: 100% 100%;
+    /* margin: auto; */
+    width: 75px;
+    height: 60px;
+    right: 17px;
+    bottom: 25px;
+    z-index: 2;
+    -webkit-animation-name: spinner;
+    animation-name: spinner;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  @-webkit-keyframes spinner {
+    83.33% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(-360deg);
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes spinner {
+    83.33% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(-360deg);
+      transform: rotate(-360deg);
+    }
+  }
+.spinselect_box{
+    position: absolute;
+    background: url(./src/images/spinselect_box/spinselect_box_bg.png) no-repeat;
+    background-size: 100% 100%;
+    /* background-color: green; */
+    width: 123px;
+    height: 0px;
+    right: 88px;
+    bottom: -63px;
+    z-index: 1;
+    /* opacity: 0; */
+    /* max-height: 0; */
+    /* overflow: hidden; */
+    /* -moz-transition: opacity .3s, max-height .3s;
+    -ms-transition: opacity .3s, max-height .3s; */
+    /* transition: opacity 1s; */
+    /* display: none; */
+    overflow: hidden;
+    transition: .6s height ease-in;
+}
+.spinselect_box_show{
+    height: 127px;
+}
+.spinselect_box_ul{
+    padding: 0px;
+    margin-left: 11px;
+    margin-top: 21px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    list-style-type: none;
+}
+.spinselect_box_li{
+    /* position: relative; */
+    /* bottom: 4px; */
+    /* text-align: right; */
+    color: #ffd100;
+    text-shadow: 0px 1px 0px #710008;
+    margin: -2px;
+    font-size: 11px;
+    font-family: "NotoSansCJKsc-Black";
+    cursor: pointer;
+}
+.spinselect_box_li:hover{
+    color: #ffffff;
+    text-shadow: 0px 1px 0px #710008;
+}
+.spinselect_box_li:active{
+    color: #f48a00;
+    text-shadow: 0px 1px 0px #710008;
+}
+#spinselect_box_li{
+    /* position: relative; */
+    /* bottom: 4px; */
+    /* text-align: right; */
+    color: #ffd100;
+    text-shadow: 0px 1px 0px #710008;
+    margin: -2px;
+    font-size: 11px;
+    font-family: "NotoSansCJKsc-Black";
+    cursor: pointer;
+}
+#spinselect_box_li:hover{
+    color: #ffffff;
+    text-shadow: 0px 1px 0px #710008;
+}
+
+
+.feature{
+    display: flex;
+    /* top: 0px; */
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.txt_feature{
+    position: relative;
+    /* bottom: 4px; */
+    /* text-align: right; */
+    color: #ffd100;
+    text-shadow: 0px 1px 0px #710008;
+    /* margin: -2px; */
+    margin-left: 4px;
+    font-size: 11px;
+    font-family: "NotoSansCJKsc-Black";
+    cursor: pointer;
+}
+.icon_feature{
+    display: inline-block;
+    position: relative;
+    background: url(./src/images/spinselect_box/icon_feature.png) no-repeat;
+    background-size: 100% 100%;
+    width: 11px;
+    height: 11px;
+    /* background-color: burlywood; */
+    margin: auto auto;
+    /* margin-left: 2px; */
+    /* margin-right: 2px; */
+    order: -1;
+}
+.txt_feature:hover{
+    color: #ffffff;
+    text-shadow: 0px 1px 0px #710008;
+}
+.txt_feature:hover + .icon_feature{
+    background: url(./src/images/spinselect_box/icon_feature_hover.png) no-repeat;
+    background-size: 100% 100%;
+}
+.txt_feature:active{
+    color: #f48a00;
+    text-shadow: 0px 1px 0px #710008;
+}
+.txt_feature:active + .icon_feature{
+    background: url(./src/images/spinselect_box/icon_feature_click.png) no-repeat;
+    background-size: 100% 100%;
+}
+/* 
+.feature:hover .icon_feature{
+    background: url(./src/images/spinselect_box/icon_feature_hover.png) no-repeat;
+    background-size: 100% 100%;
+}
+.icon_feature:hover ~ .txt_feature{
+    color: #ffffff;
+    text-shadow: 0px 1px 0px #710008;
+} */
