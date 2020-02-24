@@ -1,0 +1,119 @@
+.spinselect_box{
+    display: none;
+}
+.totalbet{
+    display: none;
+}
+.coinbox{
+    display: none;
+}
+.checkbox{
+    display: none;
+}
+.winText{
+    display: none;
+}
+.mainContainer{
+    display: flex;
+    position:relative;
+    margin: 5% auto;
+    width: 800px;
+    height: 500px;
+    /* background-color: red; */
+    background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgb(241, 117, 0) 80%);
+    border-radius: 50px 50px 0 0;
+}
+.bottomBar{
+    align-self: flex-end;
+    background-color: green;
+    width: 100%;
+    height: auto;
+}
+.panel{
+    position: absolute;
+    width: 40%;
+    margin: auto 30%;
+    /* height: 50px; */
+    /* padding-top: 7.71916214%; */
+    /* background-image: url(./src/images/panel_bg_copy_2.png); */
+    background-image: url(./src/images/UI_paytable.png);
+    padding-top: 11%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: yellow; */
+    z-index: 1;
+}
+.btn_left{
+    position: absolute;
+    background: url(./src/images/btn_left/btn_left_normal.png);
+    background-size: 100% 100%;
+    width: 64px;
+    height: 48px;
+    left: 305px;
+    bottom: -76px;
+    z-index: 2;
+    cursor: pointer;
+}
+.btn_left:hover{
+    background-image: url(./src/images/btn_left/btn_left_hover.png);
+}
+.btn_left:active{
+    background-image: url(./src/images/btn_left/btn_left_click.png);
+}
+.btn_left_disable{
+    position: absolute;
+    background-image: url(./src/images/btn_left/btn_left_disable.png);
+    background-size: 100% 100%;
+    width: 64px;
+    height: 48px;
+    left: 305px;
+    bottom: -76px;
+    z-index: 2;
+    cursor: default;
+}
+.btn_close{
+    position: absolute;
+    background: url(./src/images/btn_close/btn_close_normal.png);
+    background-size: 100% 100%;
+    width: 56px;
+    height: 48px;
+    left: 372px;
+    bottom: -76px;
+    z-index: 2;
+    cursor: pointer;
+}
+.btn_close:hover{
+    background-image: url(./src/images/btn_close/btn_close_hover.png);
+}
+.btn_close:active{
+    background-image: url(./src/images/btn_close/btn_close_click.png);
+}
+.btn_right{
+    position: absolute;
+    background: url(./src/images/btn_right/btn_right_normal.png);
+    background-size: 100% 100%;
+    width: 64px;
+    height: 48px;
+    right: 305px;
+    bottom: -76px;
+    z-index: 2;
+    cursor: pointer;
+}
+.btn_right:hover{
+    background-image: url(./src/images/btn_right/btn_right_hover.png);
+}
+.btn_right:active{
+    background-image: url(./src/images/btn_right/btn_right_click.png);
+}
+.btn_right_disable{
+    position: absolute;
+    background: url(./src/images/btn_right/btn_right_disable.png);
+    background-size: 100% 100%;
+    width: 64px;
+    height: 48px;
+    right: 305px;
+    bottom: -76px;
+    z-index: 2;
+    cursor: default;
+}

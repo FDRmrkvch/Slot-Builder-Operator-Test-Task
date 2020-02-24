@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="mainPanel.css" id="style">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>testTask</title>
@@ -11,16 +11,21 @@
         <div class="bottomBar">
             <audio id="audio" src="./src/audios/Button_Click.wav" autostart="false" preload="auto"></audio>
             <div class="panel" id="panel"></div>
-            <div class="btn_info" onclick="PlaySound()"></div>
-            <div class="btn_minus" onclick="PlaySound()"></div>
-            <div class="btn_plus" onclick="PlaySound()"></div>
+            <div>
+                <div class="btn_info" onclick="PlaySound(), InfoButtonClick()"></div>
+                <div class="btn_left" id="btn_left" onclick="Left()"></div>
+                <div class="btn_close" id="btn_close" onclick="CloseButtonClick(), PlaySound()"></div>
+                <div class="btn_right" id="btn_right" onclick="Right()"></div>
+            </div>
+            <div class="btn_minus" id="btn_minus" onclick="Minus()"></div>
+            <div class="btn_plus" id="btn_plus" onclick="Plus()"></div>
             <div class="totalbet">
                 <p class="totalbetText">TOTAL BET</p>
-                <p class="totalbetCounter">$0.15</p>
+                <p class="totalbetCounter" id="totalbetCounter"></p>
             </div>
             <div class="coinbox">
                 <p class="coinboxText">COIN</p>
-                <p class="coinboxCounter">$0.01</p>
+                <p class="coinboxCounter" id="coinboxCounter"></p>
             </div>
             <div class="win">
                 <p class="winText">GOOD LUCK!</p>
@@ -38,10 +43,10 @@
             </div>
             <div>
                 <div class="spinselect_box" id="spinselect_box" onclick="PlaySound()">
-                        <div class="feature">
+                        <div class="feature" id="feature">
                             <!-- <div class="icon_feature"><a>dd</a></div> -->
-                            <div class="txt_feature">UNTIL FEATURE</div>
-                            <div class="icon_feature"></div>
+                            <div class="txt_feature" id="txt_feature">UNTIL FEATURE</div>
+                            <div class="icon_feature" id="icon_feature"></div>
                         </div>
                     <ul class="spinselect_box_ul" onclick="PlaySound()"> 
                         <!-- <li id="spinselect_box_li">

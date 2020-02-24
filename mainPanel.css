@@ -1,3 +1,15 @@
+/* body{
+    animation: showBody 4s forwards;
+    opacity: 0;
+}
+@keyframes showBody {
+    0%, 99% {
+      opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
 .mainContainer{
     display: flex;
     position:relative;
@@ -6,6 +18,12 @@
     height: 500px;
     /* background-color: red; */
     background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgb(241, 117, 0) 80%);
+    border-radius: 50px 50px 0 0;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 }
 .bottomBar{
     align-self: flex-end;
@@ -61,6 +79,17 @@
 .btn_minus:active{
     background-image: url(./src/images/btn_minus/btn_minus_click.png);
 }
+.btn_minus_disable{
+    position: absolute;
+    background: url(./src/images/btn_minus/btn_minus_disable.png);
+    background-size: 100% 100%;
+    width: 27px;
+    height: 27px;
+    left: 83px;
+    bottom: -67px;
+    z-index: 2;
+    cursor: default;
+}
 .btn_plus{
     position: absolute;
     background: url(./src/images/btn_plus/btn_plus_normal.png);
@@ -78,6 +107,17 @@
 .btn_plus:active{
     background-image: url(./src/images/btn_plus/btn_plus_click.png);
 }
+.btn_plus_disable{
+    position: absolute;
+    background-image: url(./src/images/btn_plus/btn_plus_disable.png);
+    background-size: 100% 100%;
+    width: 27px;
+    height: 27px;
+    left: 172px;
+    bottom: -67px;
+    z-index: 2;
+    cursor: default;
+}
 @font-face{
     font-family: NotoSansCJKsc-Black; 
     src: url(./src/fonts/NotoSansCJKsc-Black.otf);
@@ -90,6 +130,12 @@
     left: 111px;
     bottom: -67px;
     z-index: 2;
+    cursor: default;
+    /* user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none; */
 }
 .totalbetText{
     /* background-color: red; */
@@ -98,7 +144,7 @@
     text-shadow: 0px 1px 0px #710008;
     margin: 1px 0px 1px 0px;
     font-size: 8px;
-	font-family: "NotoSansCJKsc-Black"
+    font-family: "NotoSansCJKsc-Black";
 }
 .totalbetCounter{
     /* background-color: pink; */
@@ -119,6 +165,12 @@
     left: 208px;
     bottom: -67px;
     z-index: 2;
+    cursor: default;
+    /* user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none; */
 }
 .coinboxText{
     /* background-color: red; */
@@ -127,7 +179,7 @@
     text-shadow: 0px 1px 0px #710008;
     margin: 1px 0px 1px 0px;
     font-size: 8px;
-	font-family: "NotoSansCJKsc-Black"
+    font-family: "NotoSansCJKsc-Black";
 }
 .coinboxCounter{
     /* background-color: pink; */
@@ -148,6 +200,12 @@
     left: 294px;
     bottom: -72px;
     z-index: 2;
+    cursor: default;
+    /* user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none; */
 }
 .winText{
     /* background-color: red; */
@@ -173,6 +231,9 @@
     display: block;
     position: relative;
     /* background-color: red; */
+}
+#checkboxLabel{
+    display: none;
 }
 #checkboxLabel + span{
     position: absolute;
@@ -314,6 +375,11 @@
     /* display: none; */
     overflow: hidden;
     transition: .6s height ease-in;
+    /* user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none; */
 }
 .spinselect_box_show{
     height: 127px;
@@ -395,28 +461,20 @@
     /* margin-right: 2px; */
     order: -1;
 }
-.txt_feature:hover{
+.txt_feature_hover{
     color: #ffffff;
     text-shadow: 0px 1px 0px #710008;
 }
-.txt_feature:hover + .icon_feature{
+.icon_feature_hover{
     background: url(./src/images/spinselect_box/icon_feature_hover.png) no-repeat;
     background-size: 100% 100%;
 }
-.txt_feature:active{
+.txt_feature_active{
     color: #f48a00;
     text-shadow: 0px 1px 0px #710008;
 }
-.txt_feature:active + .icon_feature{
+.icon_feature_active{
     background: url(./src/images/spinselect_box/icon_feature_click.png) no-repeat;
     background-size: 100% 100%;
 }
-/* 
-.feature:hover .icon_feature{
-    background: url(./src/images/spinselect_box/icon_feature_hover.png) no-repeat;
-    background-size: 100% 100%;
-}
-.icon_feature:hover ~ .txt_feature{
-    color: #ffffff;
-    text-shadow: 0px 1px 0px #710008;
-} */
+
