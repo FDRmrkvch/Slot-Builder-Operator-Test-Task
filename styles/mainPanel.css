@@ -10,12 +10,6 @@
         opacity: 1;
     }
 } */
-
-@font-face{
-    font-family: NotoSansCJKsc-Black; 
-    src: url(./src/fonts/NotoSansCJKsc-Black.otf);
-}
-
 .mainContainer{
     display: flex;
     position:relative;
@@ -62,18 +56,6 @@
     z-index: 2;
     cursor: pointer;
 }
-.btn_info_disable{
-    position: absolute;
-    background-image: url(./src/images/btn_info/btn_info_disable.png);
-    background-size: 100% 100%;
-    width: 35px;
-    height: 35px;
-    left: 40px;
-    bottom: -71px;
-    z-index: 2;
-    cursor: default;
-    pointer-events: none;
-}
 .btn_info:hover{
     background-image: url(./src/images/btn_info/btn_info_hover.png);
 }
@@ -107,7 +89,6 @@
     bottom: -67px;
     z-index: 2;
     cursor: default;
-    pointer-events: none;
 }
 .btn_plus{
     position: absolute;
@@ -136,7 +117,10 @@
     bottom: -67px;
     z-index: 2;
     cursor: default;
-    pointer-events: none;
+}
+@font-face{
+    font-family: NotoSansCJKsc-Black; 
+    src: url(./src/fonts/NotoSansCJKsc-Black.otf);
 }
 .totalbet{
     position: absolute;
@@ -232,11 +216,6 @@
     font-size: 33px;
     font-family: "NotoSansCJKsc-Black";
 }
-
-
-
-/* CHECKBOX */
-
 .checkbox{
     position: absolute;
     /* background-color: green; */
@@ -245,39 +224,31 @@
     right: 216px;
     bottom: -70px;
     z-index: 2;
-    /* pointer-events: none; */
 }
-/* .checkboxNone{
-    display: none;
-} */
-#checkboxID{
+#checkbox{
     width: 52px;
     height: 33px;
     display: block;
     position: relative;
     /* background-color: red; */
 }
-#checkboxInput{
+#checkboxLabel{
     display: none;
 }
-.span_dis{
-    display: none;
-}
-#checkboxInput + .span{
+#checkboxLabel + span{
     position: absolute;
     left: 0; top: 0;
     width: 100%;
     height: 100%;
-    background: url(./src/images/turbo_box/turbo_box.png) no-repeat ;
+    background: url(./src/images/turbo_box/turbo_box.png) no-repeat;
     background-size: 100%;
     cursor: pointer;
-    /* background-color: red; */
 }
-#checkboxInput:checked + .span{
+#checkboxLabel:checked + span{
     background-position: 0 -33px; 
 }
 
-#checkboxInput + .span:hover{
+#checkboxLabel + span:hover{
     background: url(./src/images/turbo_box/turbo_box_hover.png) no-repeat;
     background-size: 100%;
     position: absolute;
@@ -285,7 +256,7 @@
     width: 100%;
     height: 100%;
 }
-#checkboxInput:checked + .span:hover{
+#checkboxLabel:checked + span:hover{
     background: url(./src/images/turbo_box/turbo_box_hover.png) no-repeat;
     background-size: 100%;
     position: absolute;
@@ -294,7 +265,7 @@
     height: 100%;
     background-position: 0 -33px; 
 }
-#checkboxInput + .span:active{
+#checkboxLabel + span:active{
     background: url(./src/images/turbo_box/turbo_box_click.png) no-repeat;
     background-size: 100%;
     position: absolute;
@@ -302,7 +273,7 @@
     width: 100%;
     height: 100%;
 }
-#checkboxInput:checked + .span:active{
+#checkboxLabel:checked + span:active{
     background: url(./src/images/turbo_box/turbo_box_click.png) no-repeat;
     background-size: 100%;
     position: absolute;
@@ -311,41 +282,6 @@
     height: 100%;
     background-position: 0 -33px; 
 }
-
-/* disable */
-.span_disable{
-    position: absolute;
-    left: 0; top: 0;
-    width: 100%;
-    height: 100%;
-    background: url(./src/images/turbo_box/turbo_box_disable.png) no-repeat;
-    background-size: 100%;
-    cursor: default;
-    /* z-index: 4; */
-}
-.span_disable_pos{
-    position: absolute;
-    left: 0; top: 0;
-    width: 100%;
-    height: 100%;
-    background: url(./src/images/turbo_box/turbo_box_disable.png) no-repeat;
-    background-size: 100%;
-    cursor: default;
-    background-position: 0 -33px; 
-    /* z-index: 4; */
-}
-.checkbox_dis{
-    position: absolute;
-    /* background-color: green; */
-    width: 52px;
-    height: 33px;
-    right: 216px;
-    bottom: -70px;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
 .auto_box{
     position: absolute;
     background: url(./src/images/auto_box/auto_box.png) no-repeat;
@@ -357,7 +293,6 @@
     bottom: -70px;
     z-index: 2;
     cursor: pointer;
-    /* display: none; */
 }
 .auto_box:hover{
     background-image: url(./src/images/auto_box/auto_box_hover.png);
@@ -381,12 +316,12 @@
 .btn_spin:active{
     background-image: url(./src/images/btn_spin/btn_spin_click.png);
 }
-
-
 .spinner{
     position: absolute;
+    /* background-color: green; */
     background: url(./src/images/spinner/normal.png) no-repeat;
     background-size: 100% 100%;
+    /* margin: auto; */
     width: 75px;
     height: 60px;
     right: 17px;
@@ -394,15 +329,15 @@
     z-index: 2;
     -webkit-animation-name: spinner;
     animation-name: spinner;
-    -webkit-animation-duration: 5s;
-    animation-duration: 5s;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-}
-@-webkit-keyframes spinner {
-    75% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  @-webkit-keyframes spinner {
+    83.33% {
       -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
@@ -412,7 +347,7 @@
     }
   }
   @keyframes spinner {
-    75% {
+    83.33% {
       -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
@@ -421,174 +356,6 @@
       transform: rotate(-360deg);
     }
   }
-  
-.spinner_stop{
-    position: absolute;
-    /* background-color: green; */
-    background: url(./src/images/btn_spin/btn_spin_stop_disable.png) no-repeat;
-    background-size: 100% 100%;
-    width: 109px;
-    height: 109px;
-    right: 0px;
-    bottom: 0px;
-    z-index: 2;
-
-    -webkit-animation-name: stop;
-    animation-name: stop;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-timing-function: step-start;
-    animation-timing-function: step-start;
-  }
-@-webkit-keyframes stop {
-    0%{
-        background: url(./src/images/btn_spin/btn_spin_stop_disable.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-        cursor: default;
-    }
-    50%{
-        background: url(./src/images/btn_spin/btn_spin_stop_normal.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-    }
-    100%{
-        background: url(./src/images/btn_spin/btn_spin_stop_disable.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-        cursor: default;
-    }
-  }
-  @keyframes stop {
-    0%{
-        background: url(./src/images/btn_spin/btn_spin_stop_disable.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-        cursor: default;
-    }
-    50%{
-        background: url(./src/images/btn_spin/btn_spin_stop_normal.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-    }
-    100%{
-        background: url(./src/images/btn_spin/btn_spin_stop_disable.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-        cursor: default;
-    }
-  }
-
-  .spinner_stop_once{
-    position: absolute;
-    /* background-color: green; */
-    background: url(./src/images/btn_spin/btn_spin_stop_disable.png) no-repeat;
-    background-size: 100% 100%;
-    width: 109px;
-    height: 109px;
-    right: 0px;
-    bottom: 0px;
-    z-index: 2;
-
-    -webkit-animation-name: stop_once;
-    animation-name: stop_once;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-    -webkit-animation-timing-function: step-end;
-    animation-timing-function: step-end;
-  }
-@-webkit-keyframes stop_once {
-    0%{
-        background: url(./src/images/btn_spin/btn_spin_stop_disable.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-        cursor: default;
-    }
-    50%{
-        background: url(./src/images/btn_spin/btn_spin_stop_normal.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-    }
-    100%{
-        background: url(./src/images/btn_spin/btn_spin_stop_disable.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-        cursor: default;
-    }
-  }
-  @keyframes stop_once {
-    0%{
-        background: url(./src/images/btn_spin/btn_spin_stop_disable.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-        cursor: default;
-    }
-    50%{
-        background: url(./src/images/btn_spin/btn_spin_stop_normal.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-    }
-    100%{
-        background: url(./src/images/btn_spin/btn_spin_stop_disable.png) no-repeat;
-        background-size: 100% 100%;
-        width: 109px;
-        height: 109px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 2;
-        cursor: default;
-    }
-  }
-
-
 .spinselect_box{
     position: absolute;
     background: url(./src/images/spinselect_box/spinselect_box_bg.png) no-repeat;
@@ -717,153 +484,19 @@
 
 .stop_box{
     position: absolute;
-    background: url(./src/images/stop_red/stop_red_normal.png) no-repeat;
+    background: url() no-repeat;
     background-size: 100% 100%;
-    /* background-color: green; */
-    width: 122px;
+    background-color: green;
+    width: 124px;
     height: 33px;
-    right: 90px;
+    right: 88px;
     bottom: -70px;
-    z-index: 2;
+    z-index: 3;
     cursor: pointer;
 }
 .stop_box:hover{
-    position: absolute;
-    background: url(./src/images/stop_red/stop_red_hover.png);
-    background-size: 100% 100%;
-    /* background-color: green; */
-    width: 122px;
-    height: 33px;
-    right: 90px;
-    bottom: -70px;
-    z-index: 2;
-    cursor: pointer;
+    background-image: url(./src/images/auto_box/auto_box_hover.png);
 }
 .stop_box:active{
-    position: absolute;
-    background: url(./src/images/stop_red/stop_red_click.png);
-    background-size: 100% 100%;
-    /* background-color: green; */
-    width: 122px;
-    height: 33px;
-    right: 90px;
-    bottom: -70px;
-    z-index: 2;
-    cursor: pointer;
+    background-image: url(./src/images/auto_box/auto_box_click.png);
 }
-
-.sign{
-    position: absolute;
-    /* background-color: green; */
-    background: url(./src/images/stop_red/sign.png) no-repeat;
-    background-size: 100% 100%;
-    /* margin: auto; */
-    width: 20px;
-    height: 20px;
-    right: 185px;
-    bottom: -63px;
-    z-index: 3;
-    -webkit-animation-name: sign;
-    animation-name: sign;
-    -webkit-animation-duration: 2s ;
-    animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-timing-function: initial;
-    animation-timing-function: initial;
-  }
-  @-webkit-keyframes sign {
-    50% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(-360deg);
-      transform: rotate(-360deg);
-    }
-  }
-  @keyframes sign {
-    50% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(-360deg);
-      transform: rotate(-360deg);
-    }
-  }
-
-
-  .stop_box_red{
-    position: absolute;
-    background: url(./src/images/stop_blue/stop_blue_normal.png) no-repeat;
-    background-size: 100% 100%;
-    /* background-color: green; */
-    width: 122px;
-    height: 33px;
-    right: 90px;
-    bottom: -70px;
-    z-index: 2;
-    cursor: pointer;
-}
-.stop_box_red:hover{
-    position: absolute;
-    background: url(./src/images/stop_blue/stop_blue_hover.png);
-    background-size: 100% 100%;
-    /* background-color: green; */
-    width: 122px;
-    height: 33px;
-    right: 90px;
-    bottom: -70px;
-    z-index: 2;
-    cursor: pointer;
-}
-.stop_box_red:active{
-    position: absolute;
-    background: url(./src/images/stop_blue/stop_blue_click.png);
-    background-size: 100% 100%;
-    /* background-color: green; */
-    width: 122px;
-    height: 33px;
-    right: 90px;
-    bottom: -70px;
-    z-index: 2;
-    cursor: pointer;
-}
-.timer{
-    position: absolute;
-    /* background-color: green; */
-    width: 11px;
-    height: auto;
-    right: 190px;
-    bottom: -60px;
-    z-index: 3;
-    cursor: default;
-    /* display: none; */
-    font-size: 11px;
-    font-family: "NotoSansCJKsc-Black";
-    cursor: pointer;
-    color: #ffd100;
-    text-shadow: 0px 1px 0px #710008;
-    margin: 0px;
-}
-.timerStep{
-    position: absolute;
-    /* background-color: green; */
-    width: 11px;
-    height: auto;
-    right: 187px;
-    bottom: -60px;
-    z-index: 3;
-    cursor: default;
-    /* display: none; */
-    font-size: 11px;
-    font-family: "NotoSansCJKsc-Black";
-    cursor: pointer;
-    color: #ffd100;
-    text-shadow: 0px 1px 0px #710008;
-    margin: 0px;
-}
-/* .timerNone{
-    display: none;
-} */

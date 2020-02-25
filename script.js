@@ -15,6 +15,20 @@ function CloseButtonClick(){
     // console.log("cllicckk")
 }
 
+// window.onload = function getNumberOfLi()
+// {
+//     spinselect_box_ul = document.getElementById('spinselect_box_ul');
+//     items = spinselect_box_ul.getElementsByTagName('li');
+    
+//     for(i = 0; i < items.length; i++){
+//         items[i].i = i;
+//         items[i].onclick = function(){
+//             alert(this.i)
+//         }
+//     }
+// }
+
+
 // function Show() {
 //     var block = document.getElementsByClassName('spinselect_box'),
 //         block_height = parseInt(getCSS(block, 'height')),
@@ -218,55 +232,415 @@ var btn_minus = document.getElementById('btn_minus');
 
     //LEFT/CLOSE/RIGHT BUTTONS DISABLE
 
-    var screen = 1;
-    // var totalbetCounter = document.getElementById("totalbetCounter");
-    //     totalbetCounter.innerHTML = "$" + count.toFixed(2);
-    // var coin = 0.10;
-    // // var coin = 0.01;
-    // var coinboxCounter = document.getElementById("coinboxCounter");
-    //     coinboxCounter.innerHTML = "$" + coin.toFixed(2);
-    
-    var btn_left = document.getElementById('btn_left');
-    var btn_close = document.getElementById('btn_minus');
-    var btn_right = document.getElementById('btn_right');
-
+var screen = 1;    
+var btn_left = document.getElementById('btn_left');
+var btn_close = document.getElementById('btn_minus');
+var btn_right = document.getElementById('btn_right');
     btn_left.classList.add('btn_left_disable');  
     btn_left.classList.remove('btn_left');
         
-        function Left(){
-            console.log(screen)
-            if(screen === 1){ 
-                btn_left.classList.add('btn_left_disable');  
-                btn_left.classList.remove('btn_left');
+    function Left(){
+            // console.log(screen)
+        if(screen === 1){ 
+            btn_left.classList.add('btn_left_disable');  
+            btn_left.classList.remove('btn_left');
                 // PlaySound();
-            }
+        }
             // else if(screen === 2){
             //     screen = screen - 1;
             //     btn_left.classList.remove('btn_left_disable');  
             //     btn_left.classList.add('btn_left');
             //     PlaySound();
             // }
-            else if(screen <= 4){
-                screen = screen - 1;
-                btn_left.classList.remove('btn_left_disable');  
-                btn_left.classList.add('btn_left');
-
-                btn_right.classList.remove('btn_right_disable');  
-                btn_right.classList.add('btn_right');
-                PlaySound();
-            }
+        else if(screen <= 4){
+            screen = screen - 1;
+            btn_left.classList.remove('btn_left_disable');  
+            btn_left.classList.add('btn_left');
+            btn_right.classList.remove('btn_right_disable');  
+            btn_right.classList.add('btn_right');
+            PlaySound();
         }
-        function Right(){
-            console.log(screen)
-            if(screen === 4){ 
-                btn_right.classList.add('btn_right_disable');  
-                btn_right.classList.remove('btn_right');
+    }
+    function Right(){
+        // console.log(screen)
+        if(screen === 4){ 
+            btn_right.classList.add('btn_right_disable');  
+            btn_right.classList.remove('btn_right');
                 // PlaySound();
-            }
-            else if(screen >= 1){
-                screen = screen + 1;  
-                btn_left.classList.remove('btn_left_disable');  
-                btn_left.classList.add('btn_left');
-                PlaySound();
-            }
         }
+        else if(screen >= 1){
+            screen = screen + 1;  
+            btn_left.classList.remove('btn_left_disable');  
+            btn_left.classList.add('btn_left');
+            PlaySound();
+            }
+    }
+
+
+
+    //FEATURE CLICK + DISABLE
+
+var sign = document.getElementById('sign');
+var auto_box = document.getElementById('auto_box');
+var stop_box = document.getElementById('stop_box');
+
+var btn_info = document.getElementById('btn_info');
+var btn_info_disable = document.getElementById('btn_info_disable');
+
+var checkbox = document.getElementById('checkbox');
+var checkboxInput = document.getElementById('checkboxInput');
+var btn_info_disable = document.getElementById('btn_info_disable');
+
+var span = document.getElementById('span');
+var span_disable = document.getElementById('span_disable');
+
+var spinner = document.getElementById('spinner');
+
+function showAgain(){
+    spinner.classList.remove('spinner_stop_once');
+    spinner.classList.add('spinner');
+}
+
+function spinnerClick(){
+    spinner.classList.remove('spinner');
+    spinner.classList.add('spinner_stop_once');
+
+    setTimeout(showAgain, 2000);
+}
+
+
+
+function featureClick(){
+    
+    auto_box.classList.remove('auto_box');
+    stop_box.classList.add('stop_box');
+    sign.classList.add('sign');
+    stop_box_red.classList.remove('stop_box_red');
+    timer.classList.remove('timer');
+    timer.classList.remove('timerStep');
+    timer.innerHTML = "";
+
+    spinner.classList.remove('spinner');
+    spinner.classList.add('spinner_stop');
+
+    btn_info.classList.remove('btn_info');
+    btn_info_disable.classList.add('btn_info_disable');
+
+    btn_minus.classList.remove('btn_minus');
+    btn_minus.classList.add('btn_minus_disable');
+
+    btn_plus.classList.remove('btn_plus');
+    btn_plus.classList.add('btn_plus_disable');
+
+    if(checkboxInput.checked){
+        span.classList.remove('span');
+        span.classList.add('span_disable_pos');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+    else{
+        span.classList.remove('span');
+        span.classList.add('span_disable');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+
+}
+
+function stopClick(){
+
+    spinner.classList.remove('spinner_stop');
+    spinner.classList.add('spinner');
+    
+    stop_box.classList.remove('stop_box');
+    sign.classList.remove('sign');
+    auto_box.classList.add('auto_box');
+
+    btn_info.classList.add('btn_info');
+    btn_info_disable.classList.remove('btn_info_disable');
+
+    btn_minus.classList.remove('btn_minus_disable');
+    btn_minus.classList.add('btn_minus');
+
+    btn_plus.classList.add('btn_plus');
+    btn_plus.classList.remove('btn_plus_disable');
+
+    if(checkboxInput.checked){
+        span.classList.add('span');
+        span.classList.remove('span_disable_pos');
+
+        checkbox.classList.remove('checkbox_dis');
+        checkbox.classList.add('checkbox');
+    }
+    else{
+        span.classList.add('span');
+        span.classList.remove('span_disable');
+
+        checkbox.classList.remove('checkbox_dis');
+        checkbox.classList.add('checkbox');
+    }
+}
+
+
+var li_25 = document.getElementById('li_25');
+var li_20 = document.getElementById('li_20');
+var li_15 = document.getElementById('li_15');
+var li_10 = document.getElementById('li_10');
+var li_5 = document.getElementById('li_5');
+
+
+var auto_box = document.getElementById('auto_box');
+var stop_box_red = document.getElementById('stop_box_red');
+
+var timer = document.getElementById('timer');
+var timerCounter = document.getElementById('timerCounter');
+timer.classList.remove('timer');
+
+
+// function timer1(sec){
+//     var second = sec;
+//     if(second<=9){
+//         timer.classList.remove('timer');
+//         timer.classList.add('timerStep');
+//     }
+//     if(second==0){
+//         return false;
+//     }
+//     timer.innerHTML = second;
+//     second--;
+//     setTimeout("timer1()", 1000);
+// }
+
+// function timer2(sec) {
+//     if(sec <= 10){
+//             timer.classList.remove('timer');
+//             timer.classList.add('timerStep');
+//         }
+//     sec--
+//     timer.innerHTML = sec;
+//     if (sec){
+//       setInterval(timer2.bind(0, sec), 1000);
+//     } 
+//   }
+
+function stopredClick(){
+    stop_box_red.classList.remove('stop_box_red');
+    timer.classList.remove('timer');
+    timer.classList.remove('timerStep');
+    auto_box.classList.add('auto_box');
+    timer.classList.add('timerNone');
+    timer.innerHTML = "";
+
+    spinner.classList.remove('spinner_stop');
+    spinner.classList.add('spinner');
+    
+    stop_box.classList.remove('stop_box');
+    sign.classList.remove('sign');
+    auto_box.classList.add('auto_box');
+
+    btn_info.classList.add('btn_info');
+    btn_info_disable.classList.remove('btn_info_disable');
+
+    btn_minus.classList.remove('btn_minus_disable');
+    btn_minus.classList.add('btn_minus');
+
+    btn_plus.classList.add('btn_plus');
+    btn_plus.classList.remove('btn_plus_disable');
+
+    if(checkboxInput.checked){
+        span.classList.add('span');
+        span.classList.remove('span_disable_pos');
+
+        checkbox.classList.remove('checkbox_dis');
+        checkbox.classList.add('checkbox');
+    }
+    else{
+        span.classList.add('span');
+        span.classList.remove('span_disable');
+
+        checkbox.classList.remove('checkbox_dis');
+        checkbox.classList.add('checkbox');
+    }
+}
+
+function spin25Click(){    
+    auto_box.classList.remove('auto_box');
+    stop_box_red.classList.add('stop_box_red');
+    timer.classList.add('timer');
+    timer.innerHTML = 25;
+    stop_box.classList.remove('stop_box');
+    sign.classList.remove('sign');
+    timer.classList.remove('timerStep');
+
+    spinner.classList.remove('spinner');
+    spinner.classList.add('spinner_stop');
+
+    btn_info.classList.remove('btn_info');
+    btn_info_disable.classList.add('btn_info_disable');
+
+    btn_minus.classList.remove('btn_minus');
+    btn_minus.classList.add('btn_minus_disable');
+
+    btn_plus.classList.remove('btn_plus');
+    btn_plus.classList.add('btn_plus_disable');
+
+    if(checkboxInput.checked){
+        span.classList.remove('span');
+        span.classList.add('span_disable_pos');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+    else{
+        span.classList.remove('span');
+        span.classList.add('span_disable');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+}
+function spin20Click(){    
+    auto_box.classList.remove('auto_box');
+    stop_box_red.classList.add('stop_box_red');
+    timer.classList.add('timer');
+    timer.innerHTML = 20;
+    stop_box.classList.remove('stop_box');
+    sign.classList.remove('sign');
+    timer.classList.remove('timerStep');
+
+    spinner.classList.remove('spinner');
+    spinner.classList.add('spinner_stop');
+
+    btn_info.classList.remove('btn_info');
+    btn_info_disable.classList.add('btn_info_disable');
+
+    btn_minus.classList.remove('btn_minus');
+    btn_minus.classList.add('btn_minus_disable');
+
+    btn_plus.classList.remove('btn_plus');
+    btn_plus.classList.add('btn_plus_disable');
+
+    if(checkboxInput.checked){
+        span.classList.remove('span');
+        span.classList.add('span_disable_pos');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+    else{
+        span.classList.remove('span');
+        span.classList.add('span_disable');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+}
+function spin15Click(){    
+    auto_box.classList.remove('auto_box');
+    stop_box_red.classList.add('stop_box_red');
+    timer.classList.add('timer');
+    timer.innerHTML = 15;
+    stop_box.classList.remove('stop_box');
+    sign.classList.remove('sign');
+    timer.classList.remove('timerStep');
+
+    spinner.classList.remove('spinner');
+    spinner.classList.add('spinner_stop');
+
+    btn_info.classList.remove('btn_info');
+    btn_info_disable.classList.add('btn_info_disable');
+
+    btn_minus.classList.remove('btn_minus');
+    btn_minus.classList.add('btn_minus_disable');
+
+    btn_plus.classList.remove('btn_plus');
+    btn_plus.classList.add('btn_plus_disable');
+
+    if(checkboxInput.checked){
+        span.classList.remove('span');
+        span.classList.add('span_disable_pos');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+    else{
+        span.classList.remove('span');
+        span.classList.add('span_disable');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+}
+function spin10Click(){    
+    auto_box.classList.remove('auto_box');
+    stop_box_red.classList.add('stop_box_red');
+    timer.classList.add('timer');
+    timer.innerHTML = 10;
+    stop_box.classList.remove('stop_box');
+    sign.classList.remove('sign');
+    timer.classList.remove('timerStep');
+
+    spinner.classList.remove('spinner');
+    spinner.classList.add('spinner_stop');
+
+    btn_info.classList.remove('btn_info');
+    btn_info_disable.classList.add('btn_info_disable');
+
+    btn_minus.classList.remove('btn_minus');
+    btn_minus.classList.add('btn_minus_disable');
+
+    btn_plus.classList.remove('btn_plus');
+    btn_plus.classList.add('btn_plus_disable');
+
+    if(checkboxInput.checked){
+        span.classList.remove('span');
+        span.classList.add('span_disable_pos');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+    else{
+        span.classList.remove('span');
+        span.classList.add('span_disable');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+}
+function spin5Click(){    
+    auto_box.classList.remove('auto_box');
+    stop_box_red.classList.add('stop_box_red');
+    timer.classList.add('timerStep');
+    timer.innerHTML = 5;
+    stop_box.classList.remove('stop_box');
+    sign.classList.remove('sign');
+
+    spinner.classList.remove('spinner');
+    spinner.classList.add('spinner_stop');
+
+    btn_info.classList.remove('btn_info');
+    btn_info_disable.classList.add('btn_info_disable');
+
+    btn_minus.classList.remove('btn_minus');
+    btn_minus.classList.add('btn_minus_disable');
+
+    btn_plus.classList.remove('btn_plus');
+    btn_plus.classList.add('btn_plus_disable');
+
+    if(checkboxInput.checked){
+        span.classList.remove('span');
+        span.classList.add('span_disable_pos');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+    else{
+        span.classList.remove('span');
+        span.classList.add('span_disable');
+
+        checkbox.classList.remove('checkbox');
+        checkbox.classList.add('checkbox_dis');
+    }
+}
