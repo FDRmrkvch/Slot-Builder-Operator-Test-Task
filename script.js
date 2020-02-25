@@ -6,57 +6,12 @@ function PlaySound() {
 function InfoButtonClick(){
     var link = document.getElementById("style");
     link.setAttribute("href", "infoPanel.css");
-    // console.log("cllicckk")
 }
 
 function CloseButtonClick(){
     var link = document.getElementById("style");
     link.setAttribute("href", "mainPanel.css");
-    // console.log("cllicckk")
 }
-
-// window.onload = function getNumberOfLi()
-// {
-//     spinselect_box_ul = document.getElementById('spinselect_box_ul');
-//     items = spinselect_box_ul.getElementsByTagName('li');
-    
-//     for(i = 0; i < items.length; i++){
-//         items[i].i = i;
-//         items[i].onclick = function(){
-//             alert(this.i)
-//         }
-//     }
-// }
-
-
-// function Show() {
-//     var block = document.getElementsByClassName('spinselect_box'),
-//         block_height = parseInt(getCSS(block, 'height')),
-//         cur_block_height = 0,
-//     function getCSS(node, prop) {
-//         return getComputedStyle(node).getPropertyValue(prop);
-//     }
-//     onmousemove = function() {
-//         block.style.height = '0px';
-//         block.style.display = 'block';
-//         var interval = window.setInterval(function() {
-//             ++ cur_block_height;
-//             block.style.height = cur_block_height + 'px';
-//             if (cur_block_height >= block_height) {
-//                 window.clearInterval(interval);
-//             }
-//         }, 10);
-//     };
-// }
-
-// var block = document.querySelector('.panel');
-
-// block.addEventListener('mouseover', function () {
-//     block.classList.add('color1');
-// });
-// block.addEventListener('mouseleave', function () {
-//     block.classList.remove('color1');
-// });
 
 
 
@@ -240,18 +195,11 @@ var btn_right = document.getElementById('btn_right');
     btn_left.classList.remove('btn_left');
         
     function Left(){
-            // console.log(screen)
+
         if(screen === 1){ 
             btn_left.classList.add('btn_left_disable');  
             btn_left.classList.remove('btn_left');
-                // PlaySound();
         }
-            // else if(screen === 2){
-            //     screen = screen - 1;
-            //     btn_left.classList.remove('btn_left_disable');  
-            //     btn_left.classList.add('btn_left');
-            //     PlaySound();
-            // }
         else if(screen <= 4){
             screen = screen - 1;
             btn_left.classList.remove('btn_left_disable');  
@@ -262,11 +210,10 @@ var btn_right = document.getElementById('btn_right');
         }
     }
     function Right(){
-        // console.log(screen)
+
         if(screen === 4){ 
             btn_right.classList.add('btn_right_disable');  
             btn_right.classList.remove('btn_right');
-                // PlaySound();
         }
         else if(screen >= 1){
             screen = screen + 1;  
@@ -296,6 +243,8 @@ var span_disable = document.getElementById('span_disable');
 
 var spinner = document.getElementById('spinner');
 
+var btn_spin = document.getElementById('btn_spin');
+
 function showAgain(){
     spinner.classList.remove('spinner_stop_once');
     spinner.classList.add('spinner');
@@ -308,9 +257,9 @@ function spinnerClick(){
     setTimeout(showAgain, 2000);
 }
 
-
-
 function featureClick(){
+    
+    btn_spin.setAttribute("onclick", "");
     
     auto_box.classList.remove('auto_box');
     stop_box.classList.add('stop_box');
@@ -350,6 +299,8 @@ function featureClick(){
 }
 
 function stopClick(){
+
+    btn_spin.setAttribute("onclick", "PlaySound()");
 
     spinner.classList.remove('spinner_stop');
     spinner.classList.add('spinner');
@@ -399,33 +350,10 @@ var timerCounter = document.getElementById('timerCounter');
 timer.classList.remove('timer');
 
 
-// function timer1(sec){
-//     var second = sec;
-//     if(second<=9){
-//         timer.classList.remove('timer');
-//         timer.classList.add('timerStep');
-//     }
-//     if(second==0){
-//         return false;
-//     }
-//     timer.innerHTML = second;
-//     second--;
-//     setTimeout("timer1()", 1000);
-// }
-
-// function timer2(sec) {
-//     if(sec <= 10){
-//             timer.classList.remove('timer');
-//             timer.classList.add('timerStep');
-//         }
-//     sec--
-//     timer.innerHTML = sec;
-//     if (sec){
-//       setInterval(timer2.bind(0, sec), 1000);
-//     } 
-//   }
-
 function stopredClick(){
+
+    btn_spin.setAttribute("onclick", "PlaySound()");
+
     stop_box_red.classList.remove('stop_box_red');
     timer.classList.remove('timer');
     timer.classList.remove('timerStep');
@@ -465,7 +393,10 @@ function stopredClick(){
     }
 }
 
-function spin25Click(){    
+function spin25Click(){   
+
+    btn_spin.setAttribute("onclick", "");
+
     auto_box.classList.remove('auto_box');
     stop_box_red.classList.add('stop_box_red');
     timer.classList.add('timer');
@@ -501,7 +432,10 @@ function spin25Click(){
         checkbox.classList.add('checkbox_dis');
     }
 }
-function spin20Click(){    
+function spin20Click(){   
+    
+    btn_spin.setAttribute("onclick", "");
+
     auto_box.classList.remove('auto_box');
     stop_box_red.classList.add('stop_box_red');
     timer.classList.add('timer');
@@ -537,7 +471,10 @@ function spin20Click(){
         checkbox.classList.add('checkbox_dis');
     }
 }
-function spin15Click(){    
+function spin15Click(){  
+    
+    btn_spin.setAttribute("onclick", "");
+
     auto_box.classList.remove('auto_box');
     stop_box_red.classList.add('stop_box_red');
     timer.classList.add('timer');
@@ -573,7 +510,10 @@ function spin15Click(){
         checkbox.classList.add('checkbox_dis');
     }
 }
-function spin10Click(){    
+function spin10Click(){   
+    
+    btn_spin.setAttribute("onclick", "");
+
     auto_box.classList.remove('auto_box');
     stop_box_red.classList.add('stop_box_red');
     timer.classList.add('timer');
@@ -610,6 +550,9 @@ function spin10Click(){
     }
 }
 function spin5Click(){    
+
+    btn_spin.setAttribute("onclick", "");
+
     auto_box.classList.remove('auto_box');
     stop_box_red.classList.add('stop_box_red');
     timer.classList.add('timerStep');
@@ -644,3 +587,80 @@ function spin5Click(){
         checkbox.classList.add('checkbox_dis');
     }
 }
+
+
+
+
+
+
+
+
+
+// function timer1(sec){
+//     var second = sec;
+//     if(second<=9){
+//         timer.classList.remove('timer');
+//         timer.classList.add('timerStep');
+//     }
+//     if(second==0){
+//         return false;
+//     }
+//     timer.innerHTML = second;
+//     second--;
+//     setTimeout("timer1()", 1000);
+// }
+
+// function timer2(sec) {
+//     if(sec <= 10){
+//             timer.classList.remove('timer');
+//             timer.classList.add('timerStep');
+//         }
+//     sec--
+//     timer.innerHTML = sec;
+//     if (sec){
+//       setInterval(timer2.bind(0, sec), 1000);
+//     } 
+//   }
+
+// window.onload = function getNumberOfLi()
+// {
+//     spinselect_box_ul = document.getElementById('spinselect_box_ul');
+//     items = spinselect_box_ul.getElementsByTagName('li');
+    
+//     for(i = 0; i < items.length; i++){
+//         items[i].i = i;
+//         items[i].onclick = function(){
+//             alert(this.i)
+//         }
+//     }
+// }
+
+
+// function Show() {
+//     var block = document.getElementsByClassName('spinselect_box'),
+//         block_height = parseInt(getCSS(block, 'height')),
+//         cur_block_height = 0,
+//     function getCSS(node, prop) {
+//         return getComputedStyle(node).getPropertyValue(prop);
+//     }
+//     onmousemove = function() {
+//         block.style.height = '0px';
+//         block.style.display = 'block';
+//         var interval = window.setInterval(function() {
+//             ++ cur_block_height;
+//             block.style.height = cur_block_height + 'px';
+//             if (cur_block_height >= block_height) {
+//                 window.clearInterval(interval);
+//             }
+//         }, 10);
+//     };
+// }
+
+// var block = document.querySelector('.panel');
+
+// block.addEventListener('mouseover', function () {
+//     block.classList.add('color1');
+// });
+// block.addEventListener('mouseleave', function () {
+//     block.classList.remove('color1');
+// });
