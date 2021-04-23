@@ -1,3 +1,3 @@
-# Slot-Builder-Operator-Test-Task
+# Test-Task
 
-[Bottom bar](http://htmlpreview.github.io/?https://github.com/FDRmrkvch/Slot-Builder-Operator-Test-Task/blob/master/index.html)
+[Bottom bar](https://fdrmrkvch.github.io/skywindGroup_testTask/)
